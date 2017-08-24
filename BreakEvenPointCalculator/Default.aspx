@@ -171,28 +171,8 @@
                     </fieldset>
                 </div>
             </div>
-            <asp:Button runat="server" ID="bHidden1" Text="" style="display:none;" OnClick="SetSessionTab" />
-            <asp:Button runat="server" ID="bHidden2" Text="" style="display:none;" OnClick="ResetSessionTab" />
         </div>
     </form>
-
-    <script type="text/javascript">
-        function KeyCheck(e) {
-            "use strict";
-            // pick passed event of global event object
-            e = e || event;
-            if (e.keyCode == 9) {
-                alert("tab pressed");
-                document.getElementById("bHidden1").click();
-            }
-            else {
-                document.getElementById("bHidden2").click();
-            }
-        }
-
-        var body = document.querySelector('body');
-        body.addEventListener('keyup', KeyCheck);
-    </script>
 
 </body>
 </html>

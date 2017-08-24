@@ -93,23 +93,8 @@ namespace BreakEvenPointCalculator
 
             // bring the focus back to the control that called the function.
             WebControl c = sender as WebControl;
-            if (Session["Tab"] != null)
-            {
-                if (Session["Tab"].ToString() == "1")
-                {
-                    foreach (WebControl ctrl in calculator.Controls.OfType<WebControl>())
-                    {
-                        if (ctrl.TabIndex == (c.TabIndex + 1))
-                            ctrl.Focus();
-                    }
-                }
-                else
-                    c.Focus();
-            }
-            else
-                c.Focus();
+            c.Focus();
 
-            Session["Tab"] = 0;
         }
 
         /// <summary>
@@ -257,24 +242,5 @@ namespace BreakEvenPointCalculator
             GetBep(sender, e);
         }
 
-        /// <summary>
-        /// Sets session["Tab"] when the last hit key is Tab.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void SetSessionTab(object sender, EventArgs e)
-        {
-            Session["Tab"] = 1;
-        }
-
-        /// <summary>
-        /// Resets sesion["Tab"].
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void ResetSessionTab(object sender, EventArgs e)
-        {
-            Session["Tab"] = 0;
-        }
     }
 }
