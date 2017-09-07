@@ -36,6 +36,10 @@ namespace BreakEvenPointCalculator
         {
             Validate();
 
+            // if the sender is a textbox remove leading zeros if any.
+            if (sender is TextBox)
+                NoLeadingZeros(sender);
+
             if (Page.IsValid)
             {
                 double ticketPrice, guarantee, taxRatio, flatFee, percentage, minPRS, otherCosts ;
@@ -95,6 +99,19 @@ namespace BreakEvenPointCalculator
             WebControl c = sender as WebControl;
             c.Focus();
 
+        }
+
+        /// <summary>
+        /// remove leading zeros from TextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        private void NoLeadingZeros (object sender)
+        {
+            TextBox c = sender as TextBox;
+            double temp;
+
+            if (double.TryParse(c.Text, out temp))
+                c.Text = temp.ToString();
         }
 
         /// <summary>
@@ -208,7 +225,7 @@ namespace BreakEvenPointCalculator
                     tbPRS1.Text = "3";
                     tbPRS1.Visible = true;
                     lPRS2.Visible = true;
-                    tbPRS2.Text = "37";
+                    tbPRS2.Text = "39";
                     tbPRS2.Visible = true;
                     break;
             }
@@ -229,13 +246,11 @@ namespace BreakEvenPointCalculator
             {
                 lVat1.Visible = true;
                 tbVat.Visible = true;
-                lVat2.Visible = true;
             }
             else
             {
                 lVat1.Visible = false;
                 tbVat.Visible = false;
-                lVat2.Visible = false;
             }
 
             upVat.Update();

@@ -1,4 +1,5 @@
 ﻿body {
+    background-color: black;
     background-image: url("/Pictures/barnett-2178229_1920.jpg");
     background-size: cover;
     color: lightgray;
@@ -13,51 +14,8 @@ h1 {
     margin: auto;
 }
 
-@media screen and (min-width: 1296px) {
-    .centre {
-        width: 50%;
-    }
-}
-
-@media screen and (min-width: 1096px) and (max-width: 1296px) {
-    .centre {
-        width: 60%;
-    }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1096px) {
-    .centre {
-        width: 70%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    .centre {
-        width: 60%;
-    }
-}
-
-@media screen and (min-width: 576px) and (max-width: 768px) {
-    .centre {
-        width: 70%;
-    }
-}
-
-@media screen and (min-width: 480px) and (max-width: 576px) {
-    .centre {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .centre {
-        width: 90%;
-    }
-}
-
 table {
-    border-collapse: separate;
-    border-spacing: 5px;
+    border-collapse: separate; border-spacing: 5px;
 }
 
 fieldset {
@@ -95,4 +53,94 @@ a:visited {
 
 a:hover {
     color: lightgray;
+}
+
+@media only screen and (min-width: 1296px) {
+    .centre {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1096px) and (max-width: 1296px) {
+    .centre {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1096px) {
+    .centre {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .centre {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .centre {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 576px) {
+    .centre {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .centre {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 768px) and (min-width: 800px) {
+    .centre {
+        width: 80%;
+    }
+    body {
+        font-size: 1.5rem;
+    }
+    .left-width {
+        min-width: 250px;
+    }
+    .form-control {
+        font-size: 1.5rem;
+    }
+    select.form-control:not([size]):not([multiple]) {
+        height: 3rem;
+    }
+    input[type=checkbox] {
+        transform: scale(1.5);
+    }
+}
+
+@media only screen and (max-device-width: 480px) and (min-width: 600px) {
+    .centre {
+        width: 90%;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    body {
+        font-size: 3rem;
+    }
+    legend {
+        font-size: 3rem;
+    }
+    .left-width {
+        min-width: 300px;
+    }
+    .form-control {
+        font-size: 3rem;
+    }
+    select.form-control:not([size]):not([multiple]) {
+        height: 5rem;
+    }
+    input[type=checkbox] {
+        transform: scale(3);
+    }
 }

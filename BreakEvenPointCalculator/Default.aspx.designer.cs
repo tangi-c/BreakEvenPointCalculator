@@ -121,15 +121,6 @@ namespace BreakEvenPointCalculator {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revVat;
         
         /// <summary>
-        /// lVat2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lVat2;
-        
-        /// <summary>
         /// lPRS control.
         /// </summary>
         /// <remarks>
@@ -290,15 +281,6 @@ namespace BreakEvenPointCalculator {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revCapacity;
-        
-        /// <summary>
-        /// lCapacity2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lCapacity2;
         
         /// <summary>
         /// lBEP control.
