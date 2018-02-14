@@ -165,6 +165,11 @@
                                     <asp:TextBox ID="tbBEP" ReadOnly="true" CssClass="form-control" runat="server" />
                                 </td>
                             </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <asp:Label ID="lFeedback" runat="server" />
+                                </td>
+                            </tr>
                         </table>
                     </fieldset>
                 </div>

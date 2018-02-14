@@ -78,19 +78,51 @@ namespace BreakEvenPointCalculator
                             break;
                     }
 
+                    // calculate the break even point and display it.
                     int bep = Calculate(tax, prsType, ticketPrice, guarantee, taxRatio, flatFee, percentage, minPRS, otherCosts);
                     tbBEP.Text = bep.ToString();
 
+                    // print feedback relative to capacity.
                     int capacity;
 
                     if (int.TryParse(tbCapacity.Text, out capacity))
                     {
-                        if ((bep >= capacity) || (bep < 0))
-                            tbBEP.ForeColor = System.Drawing.Color.DarkRed;
-                        else if (bep >= (capacity * 0.75))
-                            tbBEP.ForeColor = System.Drawing.Color.DarkOrange;
-                        else
-                            tbBEP.ForeColor = System.Drawing.Color.DarkGreen;
+                        if (capacity != 0) // but only if a capacity has been provided.
+                        {
+                            if (bep < 0)
+                            {
+                                tbBEP.ForeColor = System.Drawing.Color.DarkRed;
+                                lFeedback.ForeColor = System.Drawing.Color.DarkRed;
+                                lFeedback.Text = "There was a problem while calculating the break even point.";
+                            }
+                            else if (bep >= capacity)
+                            {
+                                tbBEP.ForeColor = System.Drawing.Color.DarkRed;
+                                lFeedback.ForeColor = System.Drawing.Color.DarkRed;
+                                lFeedback.Text = "You cannot break even. The venue is too small or the costs are too high.";
+                            }
+                            else if (bep >= (capacity * 0.75))
+                            {
+                                tbBEP.ForeColor = System.Drawing.Color.DarkOrange;
+                                lFeedback.ForeColor = System.Drawing.Color.DarkOrange;
+                                lFeedback.Text = "The possibilty of profits is very limited. The venue might be too small or the costs too high.";
+                            }
+                            else if (bep <= (capacity * 0.35))
+                            {
+                                tbBEP.ForeColor = System.Drawing.Color.DarkOrange;
+                                lFeedback.ForeColor = System.Drawing.Color.DarkOrange;
+                                lFeedback.Text = "The venue may be too big.";
+                            }
+
+                            else
+                            {
+                                tbBEP.ForeColor = System.Drawing.Color.DarkGreen;
+                                lFeedback.ForeColor = System.Drawing.Color.DarkGreen;
+                                lFeedback.Text = "Everything seems fine.";
+                            }
+                        }
+                        else // if no capacity has been provided, clear feedback message.
+                            lFeedback.Text = "";
                     }
                 }
             }
